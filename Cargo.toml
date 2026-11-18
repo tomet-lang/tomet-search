@@ -1,0 +1,32 @@
+[workspace]
+resolver = "3"
+members  = ["crates/tomet-search"]
+
+default-members = ["crates/tomet-search"]
+
+[workspace.package]
+version      = "0.1.0"
+edition      = "2024"
+rust-version = "1.85"
+license      = "MIT OR Apache-2.0"
+
+[workspace.dependencies]
+tomet-search = { path = "crates/tomet-search" }
+#--- Hole ---
+tomet-hole = { git = "https://github.com/tomet-lang/tomet-hole.git" }
+#--- Tomet ---
+tomet-ast       = { git = "https://github.com/tomet-lang/tomet.git" }
+tomet-scalar    = { git = "https://github.com/tomet-lang/tomet.git" }
+tomet-semantics = { git = "https://github.com/tomet-lang/tomet.git" }
+tomet-span      = { git = "https://github.com/tomet-lang/tomet.git" }
+tomet-tree      = { git = "https://github.com/tomet-lang/tomet.git" }
+
+[profile.release]
+opt-level     = 3
+lto           = "fat"
+codegen-units = 1
+panic         = "abort"
+strip         = true
+
+[profile.dev.package."*"]
+opt-level = 3

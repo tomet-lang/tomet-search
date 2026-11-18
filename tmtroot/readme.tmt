@@ -1,0 +1,27 @@
+::id(doc-readme)
+::export(
+  type: commonmark
+  path: "README.md"
+)
+::meta(
+  lang: en
+)
+
+$macro.generated_by(self::path)
+
+=[ Tomet Search ]
+
+Tomet-aware search engine providing hole-based matching (`tomet-hole`), fuzzy search, and search vocabularies.
+
+==[ Workspace Layout ]
+
+-| @dir(crates/tomet-search) (`tomet-search`) -- Tomet-aware search engine. Layer 0.
+
+==[ Building and Testing ]
+
+```bash
+`` just build
+`` just test
+`` just clippy
+`` just docs-check
+```

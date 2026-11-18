@@ -1,0 +1,15 @@
+[package]
+name         = "tomet-search"
+description  = "Tomet-aware search engine with hole matching, fuzzy search, and search vocabulary"
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+license.workspace      = true
+
+[dependencies]
+tomet-hole      = { workspace = true }
+tomet-ast       = { workspace = true }
+tomet-scalar    = { workspace = true }
+tomet-semantics = { workspace = true }
+tomet-span      = { workspace = true }
+tomet-tree      = { workspace = true }
