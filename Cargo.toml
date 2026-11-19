@@ -15,8 +15,9 @@ tomet-search = { path = "crates/tomet-search" }
 #--- Hole ---
 tomet-hole = { git = "https://github.com/tomet-lang/tomet-hole.git" }
 #--- Tomet ---
-tomet-ast       = { git = "https://github.com/tomet-lang/tomet.git" }
-tomet-scalar    = { git = "https://github.com/tomet-lang/tomet.git" }
+tomet-ast        = { git = "https://github.com/tomet-lang/tomet.git" }
+tomet-ast-parser = { git = "https://github.com/tomet-lang/tomet.git" }
+tomet-scalar     = { git = "https://github.com/tomet-lang/tomet.git" }
 tomet-semantics = { git = "https://github.com/tomet-lang/tomet.git" }
 tomet-span      = { git = "https://github.com/tomet-lang/tomet.git" }
 tomet-tree      = { git = "https://github.com/tomet-lang/tomet.git" }
