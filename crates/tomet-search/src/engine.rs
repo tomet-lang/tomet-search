@@ -100,10 +100,7 @@ fn eval_filter(filter: &FilterExpr, unit: &SearchUnit) -> bool {
             .tag
             .as_deref()
             .is_some_and(|tag| tag.eq_ignore_ascii_case(target)),
-        FilterExpr::Key(target) => unit
-            .keys
-            .iter()
-            .any(|key| key.eq_ignore_ascii_case(target)),
+        FilterExpr::Key(target) => unit.keys.iter().any(|key| key.eq_ignore_ascii_case(target)),
         FilterExpr::Id(target) => unit.id.as_deref().is_some_and(|id| id == target),
         FilterExpr::Scope(scope) => unit.scope == *scope,
     }

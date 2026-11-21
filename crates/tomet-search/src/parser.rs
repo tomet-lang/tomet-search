@@ -20,7 +20,10 @@ pub fn parse_query(input: &str) -> Result<Query, ParseError> {
     if !parser.is_eof() {
         return Err(ParseError::new(
             parser.pos,
-            format!("unexpected token '{}'", parser.peek_char().unwrap_or_default()),
+            format!(
+                "unexpected token '{}'",
+                parser.peek_char().unwrap_or_default()
+            ),
         ));
     }
     Ok(expr)
@@ -183,7 +186,10 @@ impl<'a> Parser<'a> {
                 '"' => return Ok(out),
                 '\\' => {
                     let Some(esc) = self.peek_char() else {
-                        return Err(ParseError::new(start, "unterminated escape in quoted string"));
+                        return Err(ParseError::new(
+                            start,
+                            "unterminated escape in quoted string",
+                        ));
                     };
                     self.pos += esc.len_utf8();
                     match esc {

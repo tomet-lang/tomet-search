@@ -130,9 +130,7 @@ pub fn damerau_levenshtein(a: &[char], b: &[char]) -> usize {
         curr[0] = i;
         for j in 1..=m {
             let cost = usize::from(a[i - 1] != b[j - 1]);
-            let mut best = (prev1[j] + 1)
-                .min(curr[j - 1] + 1)
-                .min(prev1[j - 1] + cost);
+            let mut best = (prev1[j] + 1).min(curr[j - 1] + 1).min(prev1[j - 1] + cost);
 
             if i > 1 && j > 1 && a[i - 1] == b[j - 2] && a[i - 2] == b[j - 1] {
                 best = best.min(prev2[j - 2] + 1);

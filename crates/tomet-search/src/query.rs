@@ -203,7 +203,11 @@ impl ParseError {
 
 impl fmt::Display for ParseError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "query parse error at byte {}: {}", self.offset, self.message)
+        write!(
+            f,
+            "query parse error at byte {}: {}",
+            self.offset, self.message
+        )
     }
 }
 
